@@ -158,13 +158,7 @@ export default function LogoMarquee() {
         </div>
       </div>
 
-      {/* Bottom divider line */}
-      <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-px w-full pointer-events-none overflow-hidden"
-        aria-hidden="true"
-      >
-        <img src="/logos/deco-divider.png" alt="" className="block h-full w-full" />
-      </div>
+    
     </section>
   )
 }

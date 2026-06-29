@@ -1,26 +1,5 @@
 'use client'
 
-/*
- * MISSING DESIGN TOKENS — add to globals.css @theme to replace hardcoded hex values:
- *   --color-brand:       #b42d55   (Figma: primary CTA, rating badge bg)
- *   --color-neutral-400: #bbbbbb   (Figma: Colors/Neutral/400 — body text)
- *   --color-grey-80:     #cccccc   (Figma: color/grey/80 — stat labels)
- *
- * FONTS:
- *   Sora (Regular 400) — headings, stat values
- *   Inter (Regular 400, Medium 500, SemiBold 600) — body, UI
- *   Both loaded via next/font/google in layout.tsx
- *
- * ASSUMPTIONS:
- *   - Nav will be a separate component positioned above/over this section; pt-[154px]
- *     on desktop matches the Figma content offset below the nav bar.
- *   - Stat dividers simplified from Figma's two-layer gradient to a single
- *     bg-gradient-to-b (Tailwind utility) — visually equivalent.
- *   - Phone image hidden below lg breakpoint; mobile shows full content stack.
- *   - bg.jpg already contains the Figma 20% dark overlay baked in (downloaded
- *     as a rendered export), so no additional CSS overlay is needed.
- */
-
 import Image from 'next/image'
 import { useRef } from 'react'
 import gsap from 'gsap'
@@ -314,7 +293,7 @@ export default function Hero() {
               <div ref={badgesRef} className="flex flex-wrap items-center gap-4">
                 {/* 4.8 APP RATING badge */}
                 <div
-                  className="flex h-[30px] items-center gap-[10px] rounded-[4px] pl-[6px] pr-[8px]"
+                  className="flex h-7 items-center gap-[10px] rounded-[4px] px-2"
                   style={{
                     backgroundColor: 'rgba(255, 255, 255, 0.10)',
                     backdropFilter: 'blur(10px) saturate(160%)',
@@ -333,7 +312,7 @@ export default function Hero() {
                     ].join(', '),
                   }}
                 >
-                  <div className="flex items-center justify-center rounded-[2px] bg-[#b42d55] px-2 py-0.5">
+                  <div className="flex items-center justify-center rounded-[2px] bg-[#b42d55] px-2 py-1">
                     <span className="font-inter text-[10px] font-medium leading-none text-white">
                       4.8
                     </span>
@@ -345,7 +324,7 @@ export default function Hero() {
 
                 {/* App store stars badge */}
                 <div
-                  className="flex h-[30px] items-center justify-center rounded-[4px] px-[8px]"
+                  className="flex h-7 items-center justify-center rounded-[4px] px-[8px]"
                   style={{
                     backgroundColor: 'rgba(255, 255, 255, 0.10)',
                     backdropFilter: 'blur(10px) saturate(160%)',
