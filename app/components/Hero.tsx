@@ -63,11 +63,8 @@ export default function Hero() {
       )
       if (!badges.length) return
 
-      gsap.fromTo(
-        badges,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.6, ease: 'power2.out', stagger: 0.18, delay: 2.2 },
-      )
+      gsap.set(badges, { opacity: 0 })
+      gsap.to(badges, { opacity: 1, duration: 0.6, ease: 'power2.out', stagger: 0.18, delay: 2.2 })
     },
     { scope: badgesRef },
   )
@@ -125,12 +122,8 @@ export default function Hero() {
     () => {
       if (!descRef.current) return
 
-      gsap.from(descRef.current, {
-        opacity: 0,
-        duration: 1,
-        ease: 'power2.out',
-        delay: 2.2,
-      })
+      gsap.set(descRef.current, { opacity: 0 })
+      gsap.to(descRef.current, { opacity: 1, duration: 1, ease: 'power2.out', delay: 2.2 })
     },
     { scope: descRef },
   )
@@ -144,11 +137,8 @@ export default function Hero() {
       )
       if (!buttons.length) return
 
-      gsap.fromTo(
-        buttons,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.6, ease: 'power2.out', stagger: 0.18, delay: 2.4 },
-      )
+      gsap.set(buttons, { opacity: 0 })
+      gsap.to(buttons, { opacity: 1, duration: 0.6, ease: 'power2.out', stagger: 0.18, delay: 2.4 })
     },
     { scope: buttonsRef },
   )
